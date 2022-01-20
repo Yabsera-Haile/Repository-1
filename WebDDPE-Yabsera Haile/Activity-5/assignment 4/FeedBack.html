@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Yabsera Haile">
+    <title>Feed Back</title>
+    <script src="script1.js">  
+    </script>
+</head>
+<body>
+    <h1>feedback form</h1>
+    <form action="" onsubmit="formSubmit()">
+        <label for="Name" >Name:</label>
+        <input type="text" id="Name" >
+        <br>
+        <label for="email">Email:</label>
+        <input type="email"  >
+        <br>
+        <label for="emot">Please check all the emotions that apply to you:</label>
+        <ul>
+            <li> <label for="angry">Angry</label>
+                <input value="Angry" id="angry" type="checkbox" checked></li>
+            <li><label for="sad">Sad</label>
+                <input type="checkbox" id="Sad" value="sad"></li>
+            <li><label for="happy">Happy</label>
+                <input type="checkbox" id="Happy" value="Happy"></li>
+            <li><label for="ambivalent" >Ambivalent</label>
+                <input type="checkbox" id="ambivalent" value="Ambivalent"></li>
+        </ul>
+        <label for="sats">How satisfied where u with our service:</label>
+        <ul>
+            <li> <label for="vs">Very satisfied</label>
+                <input type="radio" id="vs" checked></li>
+            <li><label for="st" >Satisfied</label>
+                <input type="radio" id="st"></li>
+            <li><label for="dc" >Didn't care</label>
+                <input type="radio" id="dc"></li>
+            <li><label for="Dis">Dissatisfied</label>
+                <input type="radio" id="Dis"></li>
+            <li><label for="VDis">Very Dissatisfied</label>
+                <input type="radio" id="VDis"></li>
+        </ul>
+        <label for="Fur">Further comments:</label>
+        <textarea name="furthercom" id="fur" cols="25" rows="4"></textarea><br>
+        <pre> 
+                  <button type="submit" >Submit</button>
+        </pre>
+    </form>
+</body>
+</html>

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta naem="author" content="Yabsera Haile">
+    <title>Job Application</title>
+    <script src="script1.js"></script>
+</head>
+<body>
+    <table width="40%">
+        <tr>
+            <td>
+                <h1>Job Application</h1>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <form action="">
+                    <fieldset>
+                        <legend>Application Information</legend>
+                        <label for="pos">Position Applied For: </label>
+                        <input type="text" id="pos" autofocus>
+                        <br>
+                        <label for="name">Name: </label>
+                        <input type="text" id="name">
+                        <br>
+                        <label for="nation">Nationality: </label>
+                        <input type="text" id="nation">
+                        <br>
+                        <label for="dob">Date of Birth</label>
+                        <input type="date" id="dob">
+                        <br>
+                        <label for="add">Address</label>
+                        <textarea name="Address" id="add" cols="25" rows="4"></textarea>
+                        <br>
+                        <label for="tel">Telephone Number: </label>
+                        <input type="tel" id="tel">
+                        <br>
+                        <label for="email">*Email: </label>
+                        <input type="email" id="email" required>
+                        <br>
+                    </fieldset>
+                </form>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <form action="">
+                    <fieldset>
+                        <legend>Educational History</legend>
+                        <label for="edu">Educational History and Qualification</label>
+                        <textarea name="Education" id="edu" cols="25" rows="5"></textarea>
+                        <br>
+                    </fieldset>
+                </form>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <form action="">
+                    <fieldset>
+                        <legend>Work Experience</legend>
+                        <label for="emp">Employer History: </label>
+                        <textarea name="emp" id="emp" cols="25" rows="4"></textarea>
+                        <br>
+                        <label for="noy">Years of Experience: </label>
+                        0
+                        <input type="range" name="yoe" id="noy" value="1" step="1" min="0" max="10">
+                        10
+                    </fieldset>
+                </form>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <form action="">
+                    <fieldset>
+                        <legend>Personal Statement</legend>
+                    <label for="ps">Personal Statement</label>
+                    <textarea name="ps" id="ps" cols="30" rows="10"></textarea>
+                    </fieldset>
+                </form>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <form onsubmit="request(1)">
+                    <fieldset>
+                        <legend>Referees</legend>
+                        <fieldset>
+                            <legend>Referee 1</legend>
+                            <label for="r1name">Name: </label>
+                            <input type="text" id="r1name">
+                            <br>
+                            <label for="r1ocu">Occupation: </label>
+                            <input type="text" id="r1ocu">
+                            <br>
+                            <label for="r1rel">Relationship: </label>
+                            <input type="text" id="r1rel">
+                            <br>
+                            <label for="r1tel">Telephone: </label>
+                            <input type="text" id="r1tel">
+                            <br>
+                            <label for="r1add">Address: </label>
+                            <textarea name="address" id="r1add" cols="25" rows="4"></textarea>
+                        </fieldset>
+                        <fieldset>
+                            <legend>Referee 2</legend>
+                            <label for="r2name">Name: </label>
+                            <input type="text" id="r2name">
+                            <br>
+                            <label for="r2ocu">Occupation: </label>
+                            <input type="text" id="r2ocu">
+                            <br>
+                            <label for="r2rel">Relationship: </label>
+                            <input type="text" id="r2rel">
+                            <br>
+                            <label for="r2tel">Telephone: </label>
+                            <input type="text" id="r2tel">
+                            <br>
+                            <label for="r2add">Address: </label>
+                            <textarea name="address" id="r2add" cols="25" rows="4"></textarea>
+                        </fieldset>
+                    </fieldset>
+                    <button type="submit">Submit Application</button>
+                </form>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
