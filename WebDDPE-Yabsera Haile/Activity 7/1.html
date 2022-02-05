@@ -1,0 +1,108 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="refresh" content="300">
+    <meta name="keywords" content="Registration">
+    <meta name="author" content="Yabsera Haile">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        Registration
+    </title>
+    <script src="rename.js"></script>
+</head>
+
+<body id="main">
+    <table align="center" width="75%" id="ta">
+        <tr>
+            <td colspan=3 align="right"><a href="#bottomofthepage">Go To Bottom</a>
+            </td>
+        </tr>
+        <td  width="60%">
+            <h1>Register</h1>
+            <form>
+                <label for="fname">Full name:</label><br>
+                <input type="text" id="fname" name="fname"><br>
+
+                <label for="phone">Phone:</label><br>
+                <input type="number" id="phone" name="phone" step="1"><br>
+
+                <label for="age">Age:</label><br>
+                <input type="number" id="age" name="age" step="1"><br>
+
+                <label for="favcolor">Your Favorite Color:</label><br>
+                <input type="color" id="favcolor" name="favcolor"><br>
+
+                <label for="birthday">Birth Date:</label><br>
+                <input type="date" id="birthday" name="birthday"><br>
+
+                <label >Gender:</label><br>
+                <label for="female">Female</label>
+                <input type="radio" id="female" name="fav_language" value="female">
+                 <label for="male">Male</label>
+                <input type="radio" id="male" name="fav_language" value="male"><br>
+               
+
+                <label for="pwd">Password:</label><br>
+                <input type="password" id="pwd" name="pwd"><br>
+
+                <label for="cpwd">Confirm Password:</label><br>
+                <input type="password" id="cpwd" name="cpwd"><br>
+
+                <label >Skills:</label><br>
+                <ul>
+                   <li><input type="checkbox" id="skill1" name="skill1" value="HTML">
+                    <label for="skill1"> HTML</label></li><br>
+                   <li><input type="checkbox" id="skill2" name="skill2" value="CSS">
+                    <label for="skill2"> CSS</label></li> <br>
+                   <li>
+                       <input type="checkbox" id="skill3" name="skill3" value="JavaScript">
+                    <label for="skill3"> JavaScript</label>
+                   </li> <br>
+                   <li>
+                    <input type="checkbox" id="skill4" name="skill4" value="PHP">
+                    <label for="skill4"> PHP</label>
+                   </li>  <br>              
+                </ul>
+                <button onclick="createF()">Submit</button>
+            </form>
+        </td>
+            <td valign="top" rowspan=2 width=800px>
+                <details>
+                    <summary> Articles</summary>
+                    </li>
+                    <ul>
+                        <li>The Importance of Goals, Especially During Difficult Times</li>
+                        <li>5 Steps to Discovering Your Life Purpose In 2022!</li>
+                    </ul>
+                </details>
+                <details>
+                    <summary>Ideas</summary>
+                    <ul>
+                        <li>10 Books to Read in The Fall</li>
+                        <li>Top Web Development Projects Ideas</li>
+                    </ul>
+                    </ul>
+                </details>
+                <h2>Most Viewed Articles</h2>
+                <ol type="I">
+                    <li>
+                        Instant Gratification Is Stopping You From Reaching Your Goals!</li>
+                    <li>
+                        Stop Juggling Between Work And Life</li>
+                    <h2>IP Project Winners</h2>
+                    <pre>
+---------------------------------
+Rank    Award
+---------------------------------
+First   Free hosting and support 
+Second  5GB Mobile Data 
+Third   1GB Mobile Data 
+---------------------------------- </pre>
+            </td>
+        </tr>
+    </table>
+            <div id=bottomofthepage></div>
+</body>
+</html>
