@@ -1,3 +1,6 @@
+window.onload = function() {
+trendDisplay();
+}
 let menu = document.querySelector('#menu-bars');
 let navbar = document.querySelector('.navbar');
 
@@ -5,6 +8,7 @@ menu.onclick = () =>{
   menu.classList.toggle('fa-times');
   navbar.classList.toggle('active');
 }
+
 
 let section = document.querySelectorAll('section');
 let navLinks = document.querySelectorAll('header .navbar a');
@@ -105,9 +109,56 @@ function topFunction() {
   document.body.scrollTop = 0;
   document.documentElement.scrollTop = 0;
 }
+function trendDisplay()
+{
+
+  function Restaurant(name,src,alt)
+  {
+    this.name=name;
+    this.src=src;
+    this.alt=alt;
+  }
+  const trend=[];
+  trend[0]=new Restaurant("Cascara Coffee and Cocktail","resources/images/cofee.jfif","Logo of Restaurant");
+  trend[1]=new Restaurant("Yod Abissinya Cultural Food","resources/images/kitfobeaybe.jfif","Logo of Restaurant");
+  trend[2]=new Restaurant("Damas Habesha Resturant","resources/images/tibs.jfif","Logo of Restaurant");
+  trend[3]=new Restaurant("Pizza Hut","resources/images//pizza.jfif","Logo of Restaurant");
+  trend[4]=new Restaurant("OM Indian Bistro","resources/images/dish-5.png","Logo of Restaurant");
+  trend[5]=new Restaurant("In Joy Burger","resources/images/burgeriza.jfif","Logo of Restaurant");
+  
+  for(let i=0;i<trend.length;i++)
+  {
+  let x=trend[i].name;
+  let y=trend[i].src;
+  let z=trend[i].alt;
+  let a=document.createElement("img");
+  a.setAttribute("src",y);
+  a.setAttribute("alt",z);
+
+  let b=document.createElement("h3");
+  let d=document.createTextNode(x);
+  b.appendChild(d);
+
+  let e=document.createElement("a");
+  let f=document.createTextNode("Visit");
+  e.appendChild(f);
+  e.setAttribute("class","btn");
+  e.setAttribute("href","");
+
+  let g=document.createElement("br");
+  let h=document.createElement("br");
 
 
+  let c=document.createElement("div");
+  c.setAttribute("class","box");
+  c.appendChild(a);
+  c.appendChild(b);
+  c.appendChild(g);
+  c.appendChild(h);
+  c.appendChild(e);
 
+  document.getElementById("boxContain").appendChild(c);}
+}
 
 
 
