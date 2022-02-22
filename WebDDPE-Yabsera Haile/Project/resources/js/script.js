@@ -1,5 +1,6 @@
 window.onload = function() {
 trendDisplay();
+isregistered();
 }
 let menu = document.querySelector('#menu-bars');
 let navbar = document.querySelector('.navbar');
@@ -159,9 +160,43 @@ function trendDisplay()
 
   document.getElementById("boxContain").appendChild(c);}
 }
+function isregistered()
+ {
+   let check=localStorage.getItem("currentuser");
+     if(check==null)
+    {  document.getElementById("sidebar_btn").style.display="none";
+       document.getElementById("not-registered1").style.display="inline";
+       document.getElementById("not-registered2").style.display="inline";
+    }
+     else
+    {  
+      document.getElementById("sidebar_btn").style.display="inline";
+      document.getElementById("not-registered1").style.display="none";
+      document.getElementById("not-registered2").style.display="none";
+      check=String(check);
+      let p = check[check.length-1];
+      let prof = JSON.parse(localStorage.getItem("person"+p));
+      let p1=document.createTextNode(prof[2]);
+      let p2=document.createTextNode(prof[0]+prof[1]);
+      let p3=document.createTextNode(prof[3]);
+      let p4=document.createTextNode(prof[4]);
+      document.getElementById("profile1").appendChild(p1);
+      document.getElementById("profile2").appendChild(p2);
+      document.getElementById("profile3").appendChild(p3);
+      document.getElementById("profile4").appendChild(p4);
 
 
+    }
+ }
 
+function logout()
+{
+  let conf=confirm("Are You Sure You Want to Log Out?");
+  if(conf==true){
+  localStorage.removeItem("currentuser");
+  location.reload();
+}
+}
 
 
 

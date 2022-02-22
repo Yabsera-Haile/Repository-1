@@ -20,11 +20,9 @@ function openModel(){
  }
 
  var state = true;
- 
- //localStorage.setItem("count",0);
+ if(localStorage.getItem("count")==null)
+  {localStorage.setItem("count",0);}
  c = Number((localStorage.getItem("count")));
-
-
  function validate1()
  {
   var fname = document.getElementById("fname").value;
@@ -37,13 +35,7 @@ function openModel(){
     //window.alert("incorrect first name");
    
     state = false;
-   
   }
-  
-
-
-
-
  }
 
  function change1()
@@ -53,22 +45,13 @@ function openModel(){
   if(regName.test(fname) == true)
   {
     //window.alert("incorrect first name");
-    document.getElementById("v1").src = "v1.jfif";
-   
-    
-   
+    document.getElementById("v1").src = "../images/v1.jfif"; 
   }
-
   else
   {
-    document.getElementById("v1").src = "n1.png";
+    document.getElementById("v1").src = "../images/n1.png";
 
   }
-   
-    
-  
-
-   
  }
 
  
@@ -77,16 +60,12 @@ function openModel(){
  {
   var regName = /^[A-Za-z]+$/;
   var lname = document.getElementById("lname").value;
-
-
   if(regName.test(lname) == false)
   {
     //window.alert("incorrect last name");
     state = false;
     
   }
-
-
  }
  function change2()
  {
@@ -95,40 +74,24 @@ function openModel(){
   if(regName.test(lname) == true)
   {
     //window.alert("incorrect first name");
-    document.getElementById("v2").src = "v1.jfif";
-   
-    
-   
+    document.getElementById("v2").src = "../images/v1.jfif";    
   }
 
   else
   {
-    document.getElementById("v2").src = "n1.png";
-
-  }
-   
-    
-  
-
-   
+    document.getElementById("v2").src = "../images/n1.png";
+  } 
  }
 
  function validate3()
  {
   var regName1 = /^[a-zA-Z0-9_\.]+(@)+(hes.com)/;
   var username = document.getElementById("username").value;
-
-
   if(regName1.test(username) == false)
   {
     //window.alert("incorrect username");
     state = false;
-  
   }
-  
- 
-
-
  }
 
  function change3()
@@ -143,60 +106,33 @@ function openModel(){
     {
       if(username == localStorage.getItem(localStorage.key(i)))
       {
-        document.getElementById("v3").src = "n1.png";
+        document.getElementById("v3").src = "../images/n1.png";
     
       }
-       
-    
-      
-
-    
     if(username != localStorage.getItem(localStorage.key(i)))
     {
-      count++;
-      
+      count++;    
       if(count >(l-1))
       {
        
-        document.getElementById("v3").src = "v1.jfif";
+        document.getElementById("v3").src = "../images/v1.jfif";
         break;
-
-      }
-    
-      
-      
+      }    
     }
-  }
-    
-    
-   
-    
-   
-  }
-
-
-    
-  
-
-   
+  } 
+  }  
  }
 
  function validate4()
  {
   var regName2 =  /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
   var email = document.getElementById("email").value;
-
-
   if(regName2.test(email) == false)
   {
    // window.alert("incorrect email");
-   state = false;
-   
+   state = false; 
   }
-
   state = true;
-
-
  }
 
  function change4()
@@ -207,21 +143,11 @@ function openModel(){
   {
     //window.alert("incorrect first name");
     document.getElementById("v4").src = "v1.jfif";
-   
-    
-   
   }
-
   else
   {
     document.getElementById("v4").src = "n1.png";
-
   }
-   
-    
-  
-
-   
  }
 
  function validate5()
@@ -236,8 +162,6 @@ function openModel(){
    state = false;
 
   }
-
-
  }
 
  function change5()
@@ -248,24 +172,13 @@ function openModel(){
   {
     //window.alert("incorrect first name");
     document.getElementById("v5").src = "v1.jfif";
-   
-    
-   
   }
 
   else
   {
     document.getElementById("v5").src = "n1.png";
-
   }
-   
-    
-  
-
-   
- }
-
- 
+}
 
  function validate6()
  {
@@ -276,12 +189,7 @@ function openModel(){
   {
    window.alert("incorrect password");
    state = false;
- 
   }
-
-  
-
-
  }
  function change6()
  {
@@ -291,21 +199,11 @@ function openModel(){
   {
     //window.alert("incorrect first name");
     document.getElementById("v6").src = "v1.jfif";
-   
-    
-   
   }
-
   else
   {
     document.getElementById("v6").src = "n1.png";
-
-  }
-   
-    
-  
-
-   
+  }       
  }
 
  function validate7()
@@ -328,27 +226,15 @@ function openModel(){
   {
     //window.alert("incorrect first name");
     document.getElementById("v6").src = "v1.jfif";
-    document.getElementById("v7").src = "v1.jfif";
-   
-    
-   
+    document.getElementById("v7").src = "v1.jfif"; 
   }
 
   else
   {
     document.getElementById("v6").src = "n1.png";
     document.getElementById("v7").src = "n1.png";
-
-  }
-   
-    
-  
-
-   
+  }    
  }
-
-
-
  function validate8()
  {
   for(let i = 0 ; i < localStorage.length; i++ )
@@ -363,36 +249,21 @@ function openModel(){
   }
 
  }
- const db = {};
 
  function display()
  {
   if(state == true)
   {
    localStorage.setItem("user"+c,username.value);
-   //window.alert(localStorage.getItem("user"+c));
-   db[c] = [fname.value,lname.value,username.value,email.value,tel.value,password.value];
+   const db = [fname.value,lname.value,username.value,email.value,tel.value,password.value];
    localStorage.setItem("person"+c,JSON.stringify(db));
    c = Number((localStorage.getItem("count")));
    localStorage.removeItem("count");
    localStorage.setItem("count",c+1);
    c= Number(localStorage.getItem("count"));
    localStorage.setItem("currentuser","user"+(c-1));
-   document.getElementById("non-registered1").style.display="none";
-   document.getElementById("non-registered2").style.display="none";
-
-   document.getElementById("form1").action = "../../index.html";
- 
-   
-   
-   
-   
-   
-   
- 
+   isregistered();
   }
-   
- 
  }
 
 

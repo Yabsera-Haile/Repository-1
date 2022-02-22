@@ -1,107 +1,89 @@
-function openModel(){
-   const model = document.getElementById('container')
-   const overlay = document.getElementById('overlay')
+const inf=["Yabsera", "Haile","yy@hes.com","yyy@gamil.com","0987654321","Qwerty1?"];
+localStorage.setItem("user"+0,"yy@hes.com");
+localStorage.setItem("person"+0,JSON.stringify(inf));
+function openModel1(){
+   const model = document.getElementById('container1')
+   const overlay = document.getElementById('overlay1')
      model.classList.add('active')
      overlay.classList.add('active')
  
 }
-function closeModel(){
-   const model = document.getElementById('container')
-   const overlay = document.getElementById('overlay')
+function closeModel1(){
+   const model = document.getElementById('container1')
+   const overlay = document.getElementById('overlay1')
      model.classList.remove('active')
      overlay.classList.remove('active')
  
 }
-function closeouter(){
+function closeouter1(){
  const model = document.querySelectorAll('.container.active')
  model.forEach(model => {
      closeModel();
  })
 }
-var state = true;
+var state1 = true;
 
-function validate1()
+function validate11()
 {
- var regName1 = /^[a-zA-Z0-9_\.]+(@)+(hes.com)/;
- var user = document.getElementById("username").value;
-
-
- if(regName1.test(user) == false)
+ var regName11 = /^[a-zA-Z0-9_\.]+(@)+(hes.com)/;
+ var user1 = document.getElementById("username1").value;
+ if(regName11.test(user1) == false)
  {
    //window.alert("incorrect format");
-   state = false;
+   state1 = false;
  }
- var count = 0;
- var l = localStorage.length;
-
- 
-
- for(let i = 0; i< l;i++)
+ var count1 = 0;
+ var l1 = localStorage.length;
+ for(let i = 0; i< l1;i++)
  {
-   
-  if(user == localStorage.getItem(localStorage.key(i)))
+  if(user1 == localStorage.getItem(localStorage.key(i)))
   {
-    var x = localStorage.getItem(localStorage.key(i));
-    var k = localStorage.key(i);
-    localStorage.setItem("currentuser",k);
-    state = true;
+    var x1 = localStorage.getItem(localStorage.key(i));
+    var k1 = localStorage.key(i);
+    localStorage.setItem("currentuser",k1);
+    state1 = true;
     //window.alert(x);
     break;
   }
-   if(user != localStorage.getItem(localStorage.key(i)))
+   if(user1 != localStorage.getItem(localStorage.key(i)))
    {
-     count++;
-     if(count >= l-1)
+     count1++;
+     if(count1 >= l1-1)
      {
-       window.alert("not found");
-       state = false;
+        window.alert("Incorrect Username or Password");
+       state1 = false;
        break;
-     }
-     
-   }
-
-  
-   
+     } 
+   } 
  }
-
-
 }
-
-
-
-
-function validate2()
+function validate21()
 {
   if(state == true)
   {
-    var c = String(localStorage.getItem("currentuser"));
-    var p = c[c.length-1];
-    var personc = JSON.parse(localStorage.getItem("person"+p));
-    
-    
-    var passwordc = personc[p][5];
-    var password = document.getElementById("password").value;
+    let c = String(localStorage.getItem("currentuser"));
+    let p = c[c.length-1];
+    let personc = JSON.parse(localStorage.getItem("person"+p));
+    let passwordc = personc[5];
+    let password = document.getElementById("password1").value;
 
-    //window.alert(passwordc);
     if(password != passwordc)
     {
-      window.alert("incorrect password");
       state = false;
     }
-
   }
- 
 }
-
-function validate3()
+function validate31()
 {
   if(state == true)
   {
-    window.alert("welcome back");
-    document.getElementById("form2").action = "n.html";
-
+    isregistered();
+    window.alert("Welcome Back");
   }
-  
-   
+  if(state == false)
+  {
+    localStorage.removeItem("currentuser");
+   window.alert("Incorrect Username or Password");
+  }
   
 }

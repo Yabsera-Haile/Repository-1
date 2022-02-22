@@ -12,11 +12,13 @@
 
     <!-- custom css file link  -->
     <link rel="stylesheet" href="resources/css/style.css">
+    <link rel="stylesheet" href="resources/css/signin.css">
+    <link rel="stylesheet" href="resources/css/signup.css">
     <link rel="shortcut icon" href="resources/images/logo.png" type="image/x-icon">
 
 </head>
 <body >
-    
+    <div id="tester">false</div>
 <!-- header section starts      -->
 <div>
 <header id="navigation" >
@@ -28,16 +30,16 @@
         <a class="active" href="index.html">Home</a>
         <a href="resources/html/br.html">Browse</a>
         <a href="resources/html/about us.html" target="_blank">About</a>
-        <a id="not-registered1" href="resources/html/SignIn.html">Sign In</a>
-        <a id="not-registered2" href="resources/html/Signup.html">Sign up</a>
+        <a id="not-registered1" onclick="openModel1()">Sign In</a>
+        <a id="not-registered2" onclick="openModel()">Sign up</a>
     </nav>
 
      <div class="icons">
          <i class="fas fa-bars" id="menu-bars"></i>
         <i class="fas fa-search" id="search-icon"></i>
-        <a href="resources/html/cart.html" class="fas fa-shopping-cart"></a>
+        <a href="resources/html/cart.html" class="fas fa-shopping-cart" id="cart" style="display: none;"></a>
         <label for="check">
-        <i class="fas fa-user" id="sidebar_btn" onclick="func()"></i>
+        <i class="fas fa-user" id="sidebar_btn" onclick="func()" ></i>
     </label>
     </div>
     
@@ -46,10 +48,13 @@
 <!--profile part-->
 
 <div class="sidebar" id="sidebar">
-    <center> 
-        <img src="car1.png" alt="" class = "pro_pic">
-        <h4>name</h4>
+ 
+        <h4 id="profile1">Username:  </h4>
+        <h4 id="profile2">Name: </h4>
+        <h4 id="profile3">Email: </h4>
+        <h4 id="profile4">Phone: </h4>
     </form>
+    <br><br>
     <details id="details">
         <summary id="sum">Tokens</summary>
         <div id=amount>
@@ -58,17 +63,12 @@
         Expiration Date: 12/06/2022 <br>
         <a href="about_us.html#buy">Where to buy tokens.</a>
     </details>
-    </center>
+    <br><br>
     <div>
-    <a href="#"><i class="fas fa-home"></i><span>Details</span></a>
-    <a href="#"><i class="fas fa-desktop"></i><span>Favorites</span></a>
-    <a href="resources/html/settingsp.html"><i class="fas fa-info-circle"></i><SPan>settings</SPan></a></div>
-    <div class="dark">
-      
-      <label for="dark" id="darkm">Dark mode</label>
-      <input id="butn" type="checkbox">
-      </div>
-</div>
+    <a onclick="logout();"><i class="fas fa-desktop"></i><span>Log Out</span></a>
+    <a href="resources/html/settingsp.html"><i class="fas fa-info-circle"></i><SPan>Settings</SPan></a></div>
+    
+</div> 
 <!--profile end-->
 
 <!-- header section ends-->
@@ -102,7 +102,7 @@
 
 <section class="dishes" id="dishes" >
 
-  
+    <br><br><br><br><br><br>
     <h2 class="heading" id="glow" >Trending Restaurants</h2>
     
 
@@ -113,18 +113,104 @@
 </section>
 
 <!-- dishes section ends -->
+<!--Sign in section starts-->
+            <div class="container1" id="container1">
+                <div class="header1">
+                    <button class="close1" onclick="closeModel1()">&times;</button>
+                </div>
+                <div class="input1">
+                    <form id="form21">
+                        <input type="text" name="username" id="username1" placeholder="Enter Username" required
+                            pattern="^[a-zA-Z0-9_\.]+(@)+(hes.com)">
+                        <input type="password" name="password" id="password1" placeholder="Enter Password" required> <br>
+                        <hr>
+            
+                        <button id="signin11" onclick="validate11();validate21();validate31()">Sign In</button>
+                        <hr>
+                    </form>
+            
+                </div>
+            
+                <div class="text1">
+                    <i>Don't Have an Account? <a onclick="closeModel1(); openModel();">Sign Up</a></i>
+                </div>
+            </div>
+            
+            </div>
+            </div>
+            <div class="a" id="overlay1" onclick="closeouter1()">
+            
+            </div>
+<!--Sign in section ends-->
+
+<!--Sign up section starts-->
+<div class="container" id="container">
+    <div class="header">
+        <h1 id="signin">Sign up</h1>
+        <button class="close" onclick="closeModel()">&times;</button>
+    </div>
+    <div class="input">
+        <form id="form1">
+            <input type="text" name="fname" id="fname" class="inputs" placeholder="First name" required
+                pattern="^[A-Za-z]+$" onchange="change1()"><span><img src="" id="v1" width="20px"></span>
+
+            <input type="text" name="lname" id="lname" class="inputs" placeholder="Last name" required
+                pattern="^[A-Za-z]+$" onchange="change2()"><span><img src="" id="v2" width="20px"></span>
+
+
+            <input type="text" name="username" id="username" placeholder="Username" class="inputs" required
+                pattern="^[a-zA-Z0-9_\.]+(@)+(hes.com)" onchange="change3()"><span><img src="" id="v3"
+                    width="20px"></span>
+
+
+            <input type="email" name="email" id="email" placeholder="Email" class="inputs" required
+                pattern="^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$"
+                onchange="change4()"><span><img src="" id="v4" width="20px"></span>
+
+
+            <input type="tel" name="tel" id="tel" placeholder="Phone Number" class="inputs" required pattern="^\d{10}$"
+                onchange="change5()"><span><img src="" id="v5" width="20px"></span>
+
+
+            <input type="password" name="password" id="password" placeholder="Password" class="inputs" required
+                onchange="change6()"><span><img src="" id="v6" width="20px"></span>
+
+            <input type="password" name="password2" id="password2" placeholder="Confirm Password" class="inputs"
+                required onchange="change7()"><span><img src="" id="v7" width="20px"></span>
+            <div class="agr">
+                <input type="checkbox" value="agree" id="agree" required> I've Read and I Agree Hagere Eat Simple's <a
+                    href="privacy_policy.html">Privacy Policies</a> and <a href="terms&conditions.html">Terms anc
+                    Conditions.</a>
+            </div>
+            <button id="signin1"
+                onclick="validate1();validate2();validate3();validate4();validate5();validate6();validate7();validate7();validate8();display()">Sign
+                Up</button>
+        </form>
+    </div>
+
+    <hr>
+    <div class="text1">
+        Already Have an Account? <a onclick="closeModel(); openModel1();">Sign In</a></div>
+</div>
+
+</div>
+</div>
+<div class="a" id="overlay" onclick="closeouter()">
+
+</div>
+<!--Sign up section ends-->
+
 
 <!-- about section starts   -->
 
 <section class="about" id="about">
 
-    <h3 class="sub-heading"> about us </h3>
     <h1 class="heading"> why choose us? </h1>
 
     <div class="row">
 
         <div class="image">
-            <img src="images/about-img.png" alt="">
+            <img src="resources/images/about-img.png" alt="food plater">
         </div>
 
         <div class="content">
@@ -154,30 +240,51 @@
 
 </section>
 
+<!-- Instruction section starts  -->
+<div id="section2">
+  <h2 id="steptitle">How to Use?</h2>
+<div id="steps">
+    
+    <div id="step1" class="step">
+       <div> Browse Through Restaurants</div> 
+    </div>
+    <div id="step2" class="step">
+       <div>Browse Through Menu</div> 
+    </div>
+    <div id="step3" class="step">
+       <div>Add to Cart</div> 
+    </div>
+    <div id="step4" class="step">
+       <div>Pay Easily</div> 
+    </div>
+</div>
+<a id="bottomstep">Get Started</a>
+<br><br><br><br>
+</div>
+<!-- Instruction section ends  -->
+
 
 
 <!-- footer section starts  -->
 
 <section class="footer">
 
-    <div class="box-container">
+    <div class="box-container1">
 
         <div class="box">
             <h3>Locations</h3>
-            <a href="#">Megenagna</a>
-            <a href="#">Bole</a>
-            <a href="#">Ambassador</a>
-            <a href="#">4 kilo</a>
-            <a href="#">Gergi</a>
+            <b>Megenagna</b>
+            <b>Bole</b>
+            <b>Ambassador</b>
+            <b>4 kilo</b>
+            <b>Gergi</b>
         </div>
 
         <div class="box">
             <h3>quick links</h3>
-            <a href="#">home</a>
-            <a href="#">resturants</a>
-            <a href="#">about</a>
-            <a href="#">menu</a>
-            <a href="#">order</a>
+            <a href="#">Home</a>
+            <a href="#">Resturants</a>
+            <a href="#">About</a>
         </div>
 
         <div class="box">
@@ -198,15 +305,17 @@
         </div>
 
     </div>
-
     <div class="credit"> copyright @ 2022 by <span>hagere eat simple platform</span> </div>
 
 </section>
-</div>
+ </div> 
 <!-- footer section ends -->
 <!-- loader part  -->
 <!-- custom js file link  -->
 <script src="resources/js/script.js"></script>
+<script src="resources/js/SignIn.js"></script>
+<script src="resources/js/signup.js"></script>
+<script src="resources/js/settings.js"></script>
 
 </body>
 </html>
