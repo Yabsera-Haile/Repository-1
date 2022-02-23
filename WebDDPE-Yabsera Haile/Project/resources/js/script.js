@@ -144,8 +144,8 @@ function trendDisplay()
   let f=document.createTextNode("Visit");
   e.appendChild(f);
   e.setAttribute("class","btn");
-  e.setAttribute("href","");
-
+  e.setAttribute("onclick","check2()");
+  e.setAttribute("href","resources/html/menu.html");
   let g=document.createElement("br");
   let h=document.createElement("br");
 
@@ -180,11 +180,12 @@ function isregistered()
       let p2=document.createTextNode(prof[0]+prof[1]);
       let p3=document.createTextNode(prof[3]);
       let p4=document.createTextNode(prof[4]);
+      let p5=document.createTextNode(prof[6]);
       document.getElementById("profile1").appendChild(p1);
       document.getElementById("profile2").appendChild(p2);
       document.getElementById("profile3").appendChild(p3);
       document.getElementById("profile4").appendChild(p4);
-
+      document.getElementById("amount").appendChild(p5);
 
     }
  }
@@ -196,6 +197,14 @@ function logout()
   localStorage.removeItem("currentuser");
   location.reload();
 }
+}
+function check2()
+{
+  if(localStorage.getItem("currentuser")==null)
+  {
+    alert("You must be Logged In to access menu");
+    /* */
+  }
 }
 
 

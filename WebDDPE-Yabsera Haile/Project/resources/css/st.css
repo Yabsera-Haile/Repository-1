@@ -202,18 +202,13 @@ section{
    margin-top: 5%;
    width: 100%;
 }
-.dishes{
-    margin-top: 3.4%;
-}
+
 .dishes .box-container{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(28rem, 1fr));
     gap:1.5rem;
 }
-.price{
-   font-size: x-large;
-   color: #04AA6D;
-}
+
 .dishes .box-container .box{
     padding:2.5rem;
     background:#fff;
@@ -224,14 +219,61 @@ section{
     overflow: hidden;
     text-align: center;
 }
+
+.dishes .box-container .box .fa-heart,
+.dishes .box-container .box .fa-eye{
+    position: absolute;
+    top:1.5rem;
+    background:#eee;
+    border-radius: 50%;
+    height: 5rem;
+    width:5rem;
+    line-height: 5rem;
+    font-size: 2rem;
+    color:var(--black);
+}
+
+.dishes .box-container .box .fa-heart:hover,
+.dishes .box-container .box .fa-eye:hover{
+    background: var(--green);
+    color:#fff;
+}
+
+.dishes .box-container .box .fa-heart{
+    right:-15rem;
+}
+
+.dishes .box-container .box .fa-eye{
+    left:-15rem;
+}
+
+.dishes .box-container .box:hover .fa-heart{
+    right:1.5rem;
+}
+
+.dishes .box-container .box:hover .fa-eye{
+    left:1.5rem;
+}
+
 .dishes .box-container .box img{
     height:17rem;
     margin:1rem 0;
 }
+
 .dishes .box-container .box h3{
     color:var(--black);
     font-size: 2.5rem;
 }
+
+.dishes .box-container .box .stars{
+    padding:1rem 0;
+}
+
+.dishes .box-container .box .stars i{
+    font-size: 1.7rem;
+    color:var(--green);
+}
+
 .dishes .box-container .box span{
     color:var(--green);
     font-weight: bolder;
@@ -477,14 +519,9 @@ section{
 .order form .btn{
     margin-top: 0;
 }
-.review{
-    background-color: rgb(241, 229, 156); 
-}
-.footer{
-background-color: rgb(243, 209, 145);}
+
 .footer .box-container{
     display: grid;
-    background-color: rgb(243, 209, 145);
     grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
     gap:1.5rem;
 }

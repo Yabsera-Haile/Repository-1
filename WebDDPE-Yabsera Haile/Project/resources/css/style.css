@@ -181,6 +181,7 @@ header .icons #menu-bars {
   }
 }
 #about {
+  text-transform: capitalize;
   background-color: #770038;
 }
 #search-form {

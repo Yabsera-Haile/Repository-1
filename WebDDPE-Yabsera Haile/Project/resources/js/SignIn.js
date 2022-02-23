@@ -1,4 +1,4 @@
-const inf=["Yabsera", "Haile","yy@hes.com","yyy@gamil.com","0987654321","Qwerty1?"];
+const inf=["Yabsera", "Haile","yy@hes.com","yyy@gamil.com","0987654321","Qwerty1?","2000"];
 localStorage.setItem("user"+0,"yy@hes.com");
 localStorage.setItem("person"+0,JSON.stringify(inf));
 function openModel1(){

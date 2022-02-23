@@ -255,7 +255,8 @@ function openModel(){
   if(state == true)
   {
    localStorage.setItem("user"+c,username.value);
-   const db = [fname.value,lname.value,username.value,email.value,tel.value,password.value];
+   let token=2000;
+   const db = [fname.value,lname.value,username.value,email.value,tel.value,password.value,token.value];
    localStorage.setItem("person"+c,JSON.stringify(db));
    c = Number((localStorage.getItem("count")));
    localStorage.removeItem("count");
