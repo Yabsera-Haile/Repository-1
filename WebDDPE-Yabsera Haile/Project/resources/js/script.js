@@ -203,6 +203,7 @@ function check2()
   if(localStorage.getItem("currentuser")==null)
   {
     alert("You must be Logged In to access menu");
+    window.open("file:///C:/Users/Gaming%2015/Documents/GitHub/Repostory-1/WebDDPE-Yabsera%20Haile/Project/index.html");
     /* */
   }
 }
