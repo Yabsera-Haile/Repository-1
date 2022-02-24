@@ -173,15 +173,10 @@ window.onload = function() {
     {
       
       var hub = document.getElementById("hub").value;
-     
-      //window.alert(trend[0].name);
-    
 
-      //window.alert(hub);
-
-      if(hub == "Bole")
+      if(hub=="Bole")
       {
-         document.getElementById("Bole").style.display = "block";
+        document.getElementById("Bole").style.display = "block";
         document.getElementById("Bole1").style.display = "block";
         document.getElementById("bisrate gebrail").style.display = "none";
         document.getElementById("sarbet").style.display = "none";
@@ -204,6 +199,7 @@ window.onload = function() {
       if(hub == "sarbet")
       {
         document.getElementById("sarbet").style.display = "block";
+          document.getElementById("sarbet1").style.display = "block";
         document.getElementById("Bole").style.display = "none";
         document.getElementById("bisrate gebrail").style.display = "none";
         document.getElementById("Bole1").style.display = "none";
@@ -213,20 +209,13 @@ window.onload = function() {
       if(hub=="all")
       {
          document.getElementById("sarbet").style.display = "block";
+            document.getElementById("sarbet1").style.display = "block";
         document.getElementById("Bole").style.display = "block";
         document.getElementById("bisrate gebrail").style.display = "block";
         document.getElementById("Bole1").style.display = "block";
         document.getElementById("bisrate gebrail1").style.display = "block";
 
-      }
-
-    
-
-    
-
-    
-      
-
+      } 
     }
 
     function search()
